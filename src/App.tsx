@@ -1,11 +1,13 @@
-import { useState } from "react";
-import logo from "./logo.svg";
+import React, { useState } from "react";
+import LoginView from "./views/login";
 import styles from "./App.module.scss";
 
-function App() {
-  const [count, setCount] = useState(0);
-
-  return <div className={styles.App}></div>;
+function App(): React.ReactElement {
+  return (
+    <div className={styles.App}>
+      <LoginView />
+    </div>
+  );
 }
 
 export default App;

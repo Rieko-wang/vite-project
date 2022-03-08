@@ -1,0 +1,109 @@
+$color-white: #fff;
+$color-black: #000;
+$color-carrot-orange: #ed9b1e;
+$color-coral: #fd8649;
+$color-coral-bg: #ffede4;
+$color-coral-dark: #f25202;
+$color-coral-light: #fbb491;
+$color-desert-storm: #f8f8f6;
+$color-desert-storm-95: rgba(#f8f8f6, 0.95);
+$color-facebook: #3b5998;
+$color-flame-pea: #d95449;
+$color-kakao: #f9e000;
+$color-kakao2: #3f2121;
+$color-keppel: #38b2a6;
+$color-keppel-bg: #e2f4f2;
+$color-keppel-dark: #2b948a;
+$color-keppel-light: #52ccc0;
+$color-line: #1bb81d;
+$color-mercury: #e7e7e7;
+$color-ship-cove: #6d7fb4;
+$color-ship-cove-bg: #eaecf4;
+$color-ship-cove-dark: #445a98;
+$color-ship-cove-light: #98a7d3;
+$color-shuttle-gray: #63656a;
+$color-silver-sand: #c8c9cb;
+$color-silver-chalice: #9e9e9e;
+$color-supernova: #fcce01;
+$color-supernova-bg: #fff8da;
+$color-supernova-dark: #f9a600;
+$color-supernova-light: #fedd48;
+$color-terracotta: #e16b5e;
+$color-terracotta-bg: #fbe9e8;
+$color-thunderbird: #d21e1f;
+$color-tundora: #4c4c4c;
+$color-tundora-08: rgba(#4c4c4c, 0.08);
+$color-wechat: #44b549;
+$color-whatsapp: #30d26b;
+$color-white: #fff;
+$color-zalo: #018fe5;
+
+$weight-normal: "400";
+$weight-demi-bold: "500";
+$weight-semi-bold: "600";
+
+@mixin font-weight($weight) {
+  @if $weight == "normal" {
+    font-weight: $weight-normal;
+  } @else if $weight == "bold" {
+    font-weight: $weight-demi-bold;
+
+    // Increase font weight for languages that don't support Avenir Next
+    &:lang(el),
+    &:lang(zh-cn),
+    &:lang(vi-vn),
+    &:lang(zh-tw),
+    &:lang(zh-hk),
+    &:lang(ko-kr),
+    &:lang(ja-jp),
+    &:lang(th-th),
+    &:lang(ru-ru) {
+      font-weight: $weight-semi-bold;
+    }
+  }
+}
+
+// sass-lint:disable no-vendor-prefixes
+@mixin font-smoothing($value: on) {
+  @if $value == on {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  } @else if $value == inherit {
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+  } @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}
+// sass-lint:enable no-vendor-prefixes
+
+@mixin font-style($size: inherit, $line-height: inherit, $color: inherit) {
+  color: $color;
+  font-size: $size;
+  line-height: $line-height;
+}
+
+@function rem($pixel-value, $base: 16) {
+  @return ($pixel-value / $base) * 1rem;
+}
+
+@mixin respond-to($media) {
+  @if $media == small-only {
+    @media only screen and (max-width: ($medium-breakpoint-px - 1px)) {
+      @content;
+    }
+  } @else if $media == medium-and-up {
+    @include susy-breakpoint($medium-breakpoint-px, $medium-size-config) {
+      @content;
+    }
+  } @else if $media == large-and-up {
+    @include susy-breakpoint($large-breakpoint-px, $large-size-config) {
+      @content;
+    }
+  } @else if $media == extra-large-and-up {
+    @include susy-breakpoint($extra-large-breakpoint-px, $large-size-config) {
+      @content;
+    }
+  }
+}

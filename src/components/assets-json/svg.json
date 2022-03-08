@@ -1,0 +1,11 @@
+{
+  "account-modal": {
+    "svg": "/cdn-static/account-modal/dist/sprites/account-modal-7e1fc9b54624fc65c0aebbc3784f8961baabed36f1b9bf919906a42b5d0b7a0c.svg"
+  },
+  "app-download": {
+    "svg": "/cdn-static/account-modal/dist/sprites/app-download-e8225b8cadd3c85d862a40ca21bf2afc1d0206991285c525d545d55e922885fc.svg"
+  },
+  "global": {
+    "svg": "/cdn-static/account-modal/dist/sprites/global-b28ab055b3e8b3c91cd755edd952fc68e5ea9f3633c86e1f2e1cb6c16cb26c41.svg"
+  }
+}

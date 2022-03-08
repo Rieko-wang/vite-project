@@ -1,0 +1,44 @@
+.login-type-tab-wrapper {
+  margin-bottom: rem(24);
+  text-align: center;
+
+  &__tab {
+    @include clearfix;
+    display: inline-block;
+    vertical-align: bottom;
+
+    &__item {
+      @include font-weight(bold);
+      @include font-style(16px, 24px, $color-silver-chalice);
+      min-width: rem(80);
+      text-align: center;
+      cursor: pointer;
+
+      &--left {
+        margin-right: rem(32);
+        float: left;
+      }
+
+      &--right {
+        float: right;
+      }
+
+      &--selected {
+        color: $color-tundora;
+
+        &::after {
+          display: block;
+          position: relative;
+          left: 50%;
+          width: rem(60);
+          height: rem(4);
+          margin-top: rem(8);
+          transform: translateX(-50%);
+          border-radius: 2px;
+          background-color: $color-supernova;
+          content: "";
+        }
+      }
+    }
+  }
+}

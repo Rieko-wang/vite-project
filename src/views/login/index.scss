@@ -1,0 +1,99 @@
+.login-modal-container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.account-modal {
+  background: $color-desert-storm-95;
+  box-sizing: border-box;
+  box-shadow: 0 0.125rem 0.8125rem 0 rgb(0 0 0 / 6%);
+}
+
+.login-modal {
+  .email-login-form {
+    &__link {
+      color: $color-keppel;
+      cursor: pointer;
+    }
+
+    &__forgot-passsword {
+      margin-top: rem(20);
+      text-align: center;
+
+      // @include respond-to(medium-and-up) {
+      //   margin-top: rem(12);
+      // }
+
+      &__btn {
+        @include font-style(14px, 20px, $color-keppel);
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: none;
+        background: none;
+        cursor: pointer;
+      }
+    }
+
+    .input-field__input-container {
+      margin-bottom: rem(20);
+    }
+  }
+
+  .phone-login-form {
+    &__code {
+      position: relative;
+
+      .input-field__input-container {
+        margin-bottom: rem(20);
+      }
+    }
+
+    &__code-send {
+      position: absolute;
+      top: 1px;
+      right: 1px;
+    }
+
+    &__link {
+      color: $color-keppel;
+      cursor: pointer;
+    }
+
+    .phone-input {
+      margin-bottom: rem(20);
+    }
+  }
+
+  &--desktop {
+    width: rem(840);
+    position: absolute;
+    z-index: 9999;
+    margin: 50px 0;
+    left: 50%;
+    transform: translateX(-50%);
+    .layout__mainly__content {
+      min-height: rem(432);
+      padding-bottom: rem(16);
+    }
+
+    .account-modal-header__content-container__title {
+      @include font-style(24px, 32px, $color-tundora);
+    }
+  }
+
+  &--tablet {
+    width: rem(590);
+    position: absolute;
+    z-index: 9999;
+    margin: 50px 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .account-modal-header__content-container__title {
+      @include font-style(24px, 32px, $color-white);
+    }
+  }
+}
